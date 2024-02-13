@@ -35,7 +35,7 @@ This Python script allows you to analyze RNA structure data from PDB files, comp
 
 ## Usage
 
-1. Run the script with the following command:
+1. Run the script to calculate distances and pseudo-energies:
 
     ```bash
     python pdbs_to_energy.py /path/to/pdb/files /path/to/output/directory
@@ -47,14 +47,29 @@ This Python script allows you to analyze RNA structure data from PDB files, comp
    
     - `--write_distances_json`: Specify whether to save distances data as a JSON file. Default is True.
 
-## Output
+## Plotting Pseudo-energy Profiles
 
-The script generates the following output:
+The script `plot_energy_profiles.py` plots pseudo-energy profiles from a CSV file containing energy scores.
 
-- `distances_for_base_pair.json`: JSON file containing computed distances for each base pair.
-- `distances_boxplots.png`: Boxplot visualizations of distances distributions.
-- `distances_histograms.png`: Histogram visualizations of distances distributions.
-- Pseudo-energy scores saved as text and CSV files for each base pair.
+### Requirements
+
+- Python 3.x
+- Pandas
+- Matplotlib
+
+### Usage
+
+1. Run the script to plot energy profiles:
+
+    ```bash
+    python plot_energy_profiles.py /path/to/input/csv /path/to/output/directory
+    ```
+
+    Replace `/path/to/input/csv` with the path to the input CSV file containing energy scores and `/path/to/output/directory` with the directory where you want to save the plot.
+
+### Output
+
+The script generates a plot named `pseudo-energies.png`, which displays pseudo-energy profiles for each pair of residues.
 
 ## Contributing
 
